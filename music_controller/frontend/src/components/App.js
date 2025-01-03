@@ -1,26 +1,23 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client"; // Updated import
 import HomePage from "./HomePage";
 import RoomJoinPage from "./RoomJoinPage";
 import CreateRoomPage from "./CreateRoomPage";
 
-
-
 export default class App extends Component {
-    constructor(props){
-        super(props)
+    constructor(props) {
+        super(props);
     }
 
-    render(){
-        return (<div>
-            <HomePage />
-            <RoomJoinPage />
-            <CreateRoomPage />
-            
-        </div>)   
+    render() {
+        return (
+            <div>
+                <HomePage/>
+            </div>
+        );
     }
 }
 
-const appDiv = document.getElementById("app")
-render(<App/>, appDiv)
-
+const appDiv = document.getElementById("app");
+const root = createRoot(appDiv); 
+root.render(<App />); 
